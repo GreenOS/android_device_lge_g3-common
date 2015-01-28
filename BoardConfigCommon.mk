@@ -40,7 +40,7 @@ TARGET_NO_BOOTLOADER := true
 # Kernel
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=g3 user_debug=31 msm_rtb.filter=0x0
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=g3 user_debug=31 msm_rtb.filter=0x0 androidboot.bootdevice=msm_sdcc.1
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -49,6 +49,8 @@ TARGET_KERNEL_SOURCE := kernel/lge/g3
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
+AUDIO_FEATURE_ENABLED_HWDEP_CAL := true
+AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -130,11 +132,12 @@ BOARD_SEPOLICY_UNION += \
     device.te \
     file.te \
     file_contexts \
-    init_shell.te \
     genfs_contexts \
     hostapd.te \
+    init_shell.te \
     kcal_dev.te \
     kernel.te \
+    keystore.te \
     lge_touch_sysfs.te \
     mm-pp-daemon.te \
     mm-qcamerad.te \
@@ -143,6 +146,7 @@ BOARD_SEPOLICY_UNION += \
     platform_app.te \
     property.te \
     property_contexts \
+    radio.te \
     rmt_storage.te \
     sensors.te \
     servicemanager.te \

@@ -29,7 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     ro.opengles.version=196608 \
-    ro.sf.lcd_density=640
+    ro.sf.lcd_density=560
 
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -60,6 +60,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.add_power_save=1 \
+    persist.radio.apm_sim_not_pwdn=1 \
     ro.telephony.ril_class=LgeLteRIL \
 
 PRODUCT_PROPERTY_OVERRIDES += \
